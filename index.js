@@ -5,7 +5,7 @@ const { validateAirdrop, Airdrop } = require("./model/insert_m");
 
 mongoose
    .connect(
-      "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.0"
+      "mongodb+srv://daffyduck:aUeBtaqQShHQM4Me@cluster0.ayivkfd.mongodb.net/?retryWrites=true&w=majority"
    )
    .then(() => {
       console.log("Connected to database successfully");
