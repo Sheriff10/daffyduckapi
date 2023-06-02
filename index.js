@@ -24,7 +24,8 @@ app.get("/:password", async (req, res) => {
       res.status(403).send("Access Denied!!!");
    else {
       const airdrop_data = await Airdrop.find({});
-      res.status(200).send(airdrop_data);
+      const Influencer_data = await Influencer.find({});
+      res.status(200).send(airdrop_data, Influencer_data);
    }
 });
 
@@ -56,7 +57,7 @@ app.post('/influencers', async (req, res) => {
    else{
        const influencer = new Influencer({
          name: req.body.name,
-         name: req.body.address
+         address: req.body.address
        })
        await influencer.save()
        res.send("influencer added")
