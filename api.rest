@@ -1,12 +1,23 @@
-GET http://localhost:5000/daffyducksecret HTTP/1.1
+GET https://nutty-fly-loincloth.cyclic.app/daffyducksecret HTTP/1.1
 
 ###
-POST http://localhost:5000/airdrop/new HTTP/1.1
+POST https://nutty-fly-loincloth.cyclic.app/airdrop/new HTTP/1.1
 Content-Type: application/json
 
 {
-    "twitter_username": "sheezey2_",
+    "twitter_username": "sheezey2_c",
     "retweet_link": "https://jdld/sjkikm.eikms",
     "post_link": "https://jdld/sjkikm.eikms",
-    "address": "0xks.....ks"
+    "address": "0xks.....k000000s"
+}
+
+
+
+###
+POST http://localhost:5000/influencers HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Sheezey",
+    "address": "sjss"
 }

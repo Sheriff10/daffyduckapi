@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const { validateAirdrop, Airdrop } = require("./model/insert_m");
+const { Influencer, validateInfluencer } = require("./model/influencers_m");
 
 mongoose
    .connect(
@@ -48,6 +49,19 @@ app.post("/airdrop/new", async (req, res) => {
       }
    }
 });
+
+app.post('/influencers', async (req, res) => {
+   const {error} = validateInfluencer(req.body)
+   if (error) res.status(400).send(error.message)
+   else{
+       const influencer = new Influencer({
+         name: req.body.name,
+         name: req.body.address
+       })
+       await influencer.save()
+       res.send("influencer added")
+   }
+})
 
 const port = process.env.PORT || 5000
 app.listen(port, () => {
